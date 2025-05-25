@@ -1,19 +1,25 @@
-
 <!DOCTYPE html>
 <html lang="it">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Informazioni sull'Uragano Katrina - storia, impatti e dati" />
+  <meta name="description" content="Sito informativo sull'Uragano Katrina - storia, impatti e approfondimenti" />
   <title>Uragano Katrina</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/twentytwenty@1.0.0/css/twentytwenty.css">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
   <header>
     <div class="container">
       <h1>Uragano Katrina</h1>
-      <p>Analisi storica e impatto di uno dei più devastanti uragani negli Stati Uniti</p>
+      <nav>
+        <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="approfondimenti.html">Approfondimenti</a></li>
+          <li><a href="chi-siamo.html">Chi siamo</a></li>
+          <li><a href="fonti.html">Fonti</a></li>
+        </ul>
+      </nav>
     </div>
   </header>
 
@@ -24,6 +30,14 @@
         L'uragano Katrina è stato uno dei disastri naturali più devastanti nella storia degli Stati Uniti,
         colpendo principalmente la costa del Golfo nel 2005. New Orleans è stata particolarmente colpita,
         con ingenti danni e migliaia di sfollati.
+        <span class="modal-trigger" data-modal="modal1" tabindex="0" role="button" aria-label="Approfondimento su uragano Katrina">[Approfondisci]</span>
+      </p>
+    </section>
+
+    <section>
+      <h2>Cos'è l'Uragano Katrina?</h2>
+      <p>
+        L'uragano Katrina è stato uno dei più devastanti uragani nella storia degli Stati Uniti. Formatosi nell'agosto 2005, ha causato oltre 1.800 vittime e danni per circa 125 miliardi di dollari. Ha colpito duramente la città di New Orleans, inondando vaste aree a causa del cedimento degli argini.
       </p>
     </section>
 
@@ -36,82 +50,138 @@
         <li><strong>Danni:</strong> Circa 125 miliardi di dollari</li>
       </ul>
     </section>
-
+    
     <section>
       <h2>Conseguenze</h2>
-      <p>
+     <p>
         L'uragano ha avuto impatti devastanti sull'economia locale, sulla popolazione e sulle infrastrutture.
-        Il sistema di argini di New Orleans ha ceduto, causando vaste inondazioni. La risposta governativa è
-        stata oggetto di critiche e ha generato importanti riforme nella gestione delle emergenze.
-      </p>
+       Il sistema di argini di New Orleans ha ceduto, causando vaste inondazioni. La risposta governativa è
+       stata oggetto di critiche e ha generato importanti riforme nella gestione delle emergenze.
+     </p>
     </section>
 
-    <section>
+    <section class="slider-section">
       <h2>Confronto Visivo: Prima e Dopo Katrina</h2>
-      <p class="legend"><span id="legend-year">2004 – Prima dell'uragano</span></p>
-      <div class="slider-wrapper">
-        <div class="twentytwenty-container">
-         
+      <div class="image-wrapper">
+        <img src="img/before.jpg" alt="New Orleans 2004 - Prima di Katrina" class="image">
+        <div class="overlay" id="overlayContainer">
+          <img src="img/after.jpg" alt="New Orleans 2005 - Dopo Katrina" class="image" id="afterImage">
+        </div>
+      </div>
+      <input type="range" min="0" max="100" value="50" class="slider" id="slider" />
+      <div class="legend" id="legendText">Confronto tra 2004 e 2005</div>
+    </section>
+
+    <section class="timeline-section">
+      <h2>Timeline Interattiva</h2>
+      <div class="timeline">
+        <div class="event">
+          <div class="date">Agosto 23, 2005</div>
+          <div class="content">Formazione della tempesta tropicale Katrina</div>
+        </div>
+        <div class="event">
+          <div class="date">Agosto 29, 2005</div>
+          <div class="content">Katrina raggiunge la categoria 5 e colpisce la costa del Golfo</div>
+        </div>
+        <div class="event">
+          <div class="date">Settembre 1, 2005</div>
+          <div class="content">Crollo degli argini di New Orleans e inondazioni massive</div>
+        </div>
+        <div class="event">
+          <div class="date">Settembre 2005</div>
+          <div class="content">Inizio degli sforzi di soccorso e valutazione dei danni</div>
         </div>
       </div>
     </section>
-  </main>
-  <main class="container">
-    <section class="slider-section">
-        <div class="image-wrapper">
-            <img src="img/before.jpg" alt="New Orleans 2004 - Prima di Katrina" class="image" id="beforeImg">
-            <input type="range" min="0" max="100" value="50" class="slider" id="slider">
-            <img src="img/after.jpg" alt="New Orleans 2005 - Dopo Katrina" class="image overlay" id="afterImg">
-        </div>
-        <div class="legend" id="legend">2005 - Dopo Katrina</div>
+
+    <section class="testimonials-section">
+      <h2>Citazioni e Testimonianze</h2>
+      <blockquote>
+        <p>"Non dimenticherò mai la forza distruttiva di quella notte e la solidarietà della nostra comunità."</p>
+        <footer>- Maria, sopravvissuta a New Orleans</footer>
+      </blockquote>
+      <blockquote>
+        <p>"La lentezza nella risposta ha insegnato molto sul migliorare la gestione delle emergenze."</p>
+        <footer>- Esperto di gestione dei disastri</footer>
+      </blockquote>
     </section>
-</main>
 
+    <section class="infographics-section">
+      <h2>Infografica: Danni Stimati</h2>
+      <img src="img/infografica-katrina.png" alt="Infografica danni uragano Katrina" class="infographic" />
+    </section>
 
-
-<script>
-    const slider = document.getElementById('slider');
-    const afterImg = document.getElementById('afterImg');
-    const legend = document.getElementById('legend');
-
-    slider.oninput = function () {
-        afterImg.style.clipPath = `inset(0 0 0 ${this.value}%)`;
-        legend.textContent = this.value < 50 ? "2004 - Prima di Katrina" : "2005 - Dopo Katrina";
-    };
-</script>
+  </main>
 
   <footer>
     <div class="container">
       <p>&copy; 2025 - Progetto informativo su GitHub | Realizzato con HTML & CSS</p>
+      <p>Sioli Alessandro - Boudehina Yaakoub - Sega Leonardo Luis</p>
     </div>
   </footer>
-  
 
-  <!-- Script slider -->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/jquery.event.move@2.0.0/js/jquery.event.move.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/twentytwenty@1.0.0/js/jquery.twentytwenty.min.js"></script>
+  <!-- Modal di approfondimento -->
+  <div class="modal" id="modal1" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalDesc" tabindex="-1">
+    <div class="modal-content">
+      <button class="close-modal" aria-label="Chiudi approfondimento">&times;</button>
+      <h3 id="modalTitle">Approfondimento su Uragano Katrina</h3>
+      <p id="modalDesc">
+        Katrina ha rappresentato un punto di svolta nella gestione delle emergenze negli USA. La devastazione e le critiche hanno portato a importanti cambiamenti nella FEMA e nella preparazione per future calamità.
+      </p>
+    </div>
+  </div>
 
   <script>
-    $(function () {
-      $(".twentytwenty-container").twentytwenty({
-        default_offset_pct: 0.5,
-        orientation: 'horizontal',
-        before_label: '2004 – Prima dell'uragano',3
-        after_label: '2005 – Dopo l'uragano'
+    // Slider Confronto immagini
+    const slider = document.getElementById('slider');
+    const overlayContainer = document.getElementById('overlayContainer');
+    const legendText = document.getElementById('legendText');
+
+    slider.addEventListener('input', () => {
+      const value = slider.value;
+      overlayContainer.style.clipPath = `inset(0 0 0 ${value}%)`;
+
+      if (value < 40) {
+        legendText.textContent = "2005 - Dopo Katrina";
+      } else if (value > 60) {
+        legendText.textContent = "2004 - Prima di Katrina";
+      } else {
+        legendText.textContent = "Confronto tra 2004 e 2005";
+      }
+    });
+
+    // Modal di approfondimento
+    const modalTriggers = document.querySelectorAll('.modal-trigger');
+    const modal = document.getElementById('modal1');
+    const closeModalBtn = modal.querySelector('.close-modal');
+
+    modalTriggers.forEach(trigger => {
+      trigger.addEventListener('click', () => {
+        modal.style.display = 'block';
+        modal.focus();
       });
-
-      $(".twentytwenty-container").on("move.twentytwenty", function (event, sliderPosition) {
-        const legend = document.getElementById("legend-year");
-
-        if (sliderPosition < 0.4) {
-          legend.textContent = "2004 – Prima dell'uragano";
-        } else if (sliderPosition > 0.6) {
-          legend.textContent = "2005 – Dopo l'uragano";
-        } else {
-          legend.textContent = "Confronto tra 2004 e 2005";
+      trigger.addEventListener('keypress', e => {
+        if(e.key === 'Enter' || e.key === ' ') {
+          modal.style.display = 'block';
+          modal.focus();
         }
       });
+    });
+
+    closeModalBtn.addEventListener('click', () => {
+      modal.style.display = 'none';
+    });
+
+    window.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        modal.style.display = 'none';
+      }
+    });
+
+    window.addEventListener('keydown', (e) => {
+      if(e.key === 'Escape') {
+        modal.style.display = 'none';
+      }
     });
   </script>
 </body>
