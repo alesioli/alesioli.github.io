@@ -1,98 +1,302 @@
-
 body {
-    margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f0f2f5;
-    color: #333;
-    line-height: 1.6;
+  margin: 0;
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f2f5;
+  color: #333;
+  line-height: 1.6;
 }
 
 header {
-    background-color: #003366;
-    color: white;
-    padding: 20px 0;
-    text-align: center;
+  background-color: #003366;
+  color: white;
+  padding: 15px 0;
+  text-align: center;
 }
 
 header h1 {
-    margin: 0;
-    font-size: 2.5rem;
+  margin: 0;
+  font-size: 2.5rem;
 }
 
-header p {
-    margin-top: 10px;
-    font-size: 1.1rem;
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
 }
 
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  padding: 8px 15px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+  font-size: 1.1rem;
+}
+
+nav ul li a.active,
+nav ul li a:hover {
+  background-color: #005599;
+  box-shadow: 0 0 8px #005599aa;
+}
+
+/* Container */
 .container {
-    width: 90%;
-    max-width: 1000px;
-    margin: auto;
+  width: 90%;
+  max-width: 1000px;
+  margin: auto;
+  padding: 20px 0 50px 0;
 }
 
+/* Slider */
 .slider-section {
-    margin: 40px 0;
-    text-align: center;
+  margin: 50px 0;
+  text-align: center;
 }
 
 .image-wrapper {
-    position: relative;
-    width: 100%;
-    max-width: 600px;
-    margin: auto;
-    overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
 }
 
 .image {
-    width: 100%;
-    display: block;
-    height: auto;
+  width: 100%;
+  display: block;
+  height: auto;
+  border-radius: 12px;
 }
 
 .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    clip-path: inset(0 0 0 50%);
-    transition: clip-path 0.3s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+  clip-path: inset(0 0 0 50%);
+  transition: clip-path 0.3s ease;
+  border-radius: 12px;
 }
 
 .slider {
-    width: 100%;
-    margin: 20px 0;
+  width: 100%;
+  margin: 25px 0;
 }
 
 input[type="range"] {
-    width: 100%;
-    appearance: none;
-    height: 8px;
-    background: #ddd;
-    border-radius: 5px;
-    outline: none;
+  width: 100%;
+  appearance: none;
+  height: 10px;
+  background: #ddd;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
 }
 
 input[type="range"]::-webkit-slider-thumb {
-    appearance: none;
-    width: 20px;
-    height: 20px;
-    background: #003366;
-    border-radius: 50%;
-    cursor: pointer;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  background: #003366;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  background-color: #005599;
 }
 
 .legend {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #003366;
-    margin-top: 10px;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #003366;
+  margin-top: 12px;
+}
+
+/* Dati principali */
+.key-data {
+  list-style: none;
+  padding-left: 0;
+  font-size: 1.1rem;
+  border-left: 4px solid #003366;
+  margin: 10px 0 30px 0;
+}
+
+.key-data li {
+  margin-bottom: 8px;
+}
+
+/* Timeline */
+.timeline-section {
+  margin: 50px 0;
+}
+
+.timeline {
+  border-left: 4px solid #005599;
+  margin-left: 15px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.timeline .event {
+  position: relative;
+  margin-bottom: 30px;
+  padding-left: 25px;
+}
+
+.timeline .event::before {
+  content: '';
+  position: absolute;
+  left: -11px;
+  top: 5px;
+  width: 18px;
+  height: 18px;
+  background-color: #005599;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #005599aa;
+}
+
+.timeline .date {
+  font-weight: 700;
+  color: #003366;
+  margin-bottom: 5px;
+}
+
+.timeline .content {
+  font-size: 1rem;
+  color: #444;
+}
+
+/* Citazioni / Testimonianze */
+.testimonials-section {
+  background-color: #e9f0fc;
+  padding: 30px 20px;
+  border-radius: 12px;
+  margin: 50px 0;
+}
+
+.testimonials-section h2 {
+  color: #003366;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.testimonials-section blockquote {
+  font-style: italic;
+  font-size: 1.2rem;
+  margin: 15px auto;
+  max-width: 700px;
+  color: #222;
+  border-left: 5px solid #005599;
+  padding-left: 5px;
+  background: #f5faff;
+  border-radius: 8px;
+  box-shadow: 1px 1px 6px #ccc;
+}
+
+.testimonials-section footer {
+  margin-top: 10px;
+  font-weight: 600;
+  text-align: center;
+  color: #fff;
+}
+
+/* Infografica / mappa */
+.infographics-section {
+  text-align: center;
+  margin: 40px 0 80px 0;
+}
+
+.infographic {
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0,85,153,0.3);
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1100;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.6);
+  backdrop-filter: blur(3px);
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: auto;
+  padding: 30px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 600px;
+  box-shadow: 0 4px 25px rgba(0,0,0,0.3);
+  position: relative;
+}
+
+.close-modal {
+  position: absolute;
+  top: 10px;
+  right: 18px;
+  font-size: 2rem;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: #005599;
+  font-weight: 700;
+  transition: color 0.3s ease;
+}
+
+.close-modal:hover,
+.close-modal:focus {
+  color: #003366;
+  outline: none;
+  text-shadow: 0 0 10px #003366aa;
+}
+
+/* Pulsante approfondimento nel testo */
+.modal-trigger {
+  color: #005599;
+  cursor: pointer;
+  font-weight: 700;
+  text-decoration: underline;
+  margin-left: 6px;
+}
+
+.modal-trigger:focus {
+  outline: 3px solid #003366;
+  outline-offset: 2px;
 }
 
 footer {
-    background-color: #003366;
-    color: white;
-    text-align: center;
-    padding: 15px 0;
-    margin-top: 50px;
+  background-color: #003366;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  margin-top: 50px;
+}
+
+details summary {
+  cursor: pointer;
+  padding: 10px;
+  background-color: #e6e6e6;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+details[open] summary {
+  background-color: #d9d9d9;
 }
